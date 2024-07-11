@@ -16,6 +16,8 @@ import PotatoWhite from "@/app/assets/products/Potato White.png";
 import Capsicum from "@/app/assets/products/Capsicum.png";
 import GreenChili from "@/app/assets/products/Green Chili.png";
 import LongBegun from "@/app/assets/products/Long Begun.png";
+import MuttonPremium from "@/app/assets/products/Mutton Premium.png";
+import RoastChicken from "@/app/assets/products/Roast Chicken.png";
 
 const products = [
   {
@@ -91,6 +93,30 @@ const products = [
     productImg: AmulDarkChocolate,
   },
   {
+    productName: "Potato White",
+    productWeight: "500gm",
+    productPrice: "35Bdt",
+    productImg: PotatoWhite,
+  },
+  {
+    productName: "Capsicum",
+    productWeight: "250gm",
+    productPrice: "112Bdt",
+    productImg: Capsicum,
+  },
+  {
+    productName: "Green Chili",
+    productWeight: "100gm",
+    productPrice: "27Bdt",
+    productImg: GreenChili,
+  },
+  {
+    productName: "Long Begun",
+    productWeight: "500gm",
+    productPrice: "55Bdt",
+    productImg: LongBegun,
+  },
+  {
     productName: "Beef Bone-In Premium",
     productWeight: "500gm",
     productPrice: "394Bdt",
@@ -175,21 +201,21 @@ const products = [
     productImg: Himsagar,
   },
   {
-    productName: "Nazirshail Rice",
-    productWeight: "1KG",
-    productPrice: "85Bdt",
-    productImg: Nazirshail,
+    productName: "Mutton Premium",
+    productWeight: "500gm",
+    productPrice: "675Bdt",
+    productImg: MuttonPremium,
   },
   {
-    productName: "Pure It Kit",
-    productWeight: "1500Ltr",
-    productPrice: "730Bdt",
-    productImg: PureIt,
+    productName: "Roast Chicken",
+    productWeight: "250gm",
+    productPrice: "220Bdt",
+    productImg: RoastChicken,
   },
 ];
 export default function ProductPage() {
   return (
-    <div className="grid grid-cols-4 gap-10 mt-5 mb-10 mx-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-5 mb-10 mx-5">
       {products.map((product, idx) => (
         <SingleProductPage
           key={idx}
