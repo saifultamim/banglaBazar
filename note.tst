@@ -1,25 +1,3 @@
-import Slider from "./components/reuseable/slider";
-import ProductCard from "./components/home/product-card";
-import Beef from "@/app/assets/products/Beef Bone-In Premium.png";
-import Himsagar from "@/app/assets/products/Himsagar Mango.png";
-import Nazirshail from "@/app/assets/products/Nazirshail Rice.png";
-import PureIt from "@/app/assets/products/Pure It Kit.png";
-import MasurDal from "@/app/assets/products/Masur Dal Premium.png";
-import BroilerChicken from "@/app/assets/products/Broiler Chicken wo Skin.png";
-import ChickenEgg from "@/app/assets/products/Chicken Egg.png";
-import DesiOnion from "@/app/assets/products/Desi Onion.png";
-import BombaySweetsChanachur from "@/app/assets/products/Bombay Sweets Chanachur.png";
-import KurKure from "@/app/assets/products/KurKure S&O.png";
-import RuchiJhalChanachur from "@/app/assets/products/Ruchi Jhal Chanachur.png";
-import AmulDarkChocolate from "@/app/assets/products/Amul Dark Chocolate.png";
-import SliderSetting from "./components/reuseable/slider";
-import FocusOnSelect from "./components/reuseable/slider";
-import CustomSlider from "./components/reuseable/slider";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import SimpleSlider from "./components/reuseable/slider";
-import ReuseableSlider from "./components/reuseable/slider";
-
 const products = [
   {
     id: 1,
@@ -106,15 +84,3 @@ const products = [
     productImg: AmulDarkChocolate,
   },
 ];
-
-export default function Home() {
-  return (
-    <main>
-      <ReuseableSlider>
-        {products.map((product) => (
-          <ProductCard key={product.id} {...product} />
-        ))}
-      </ReuseableSlider>
-    </main>
-  );
-}
