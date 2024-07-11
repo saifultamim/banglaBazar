@@ -14,6 +14,18 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    boxShadow: {
+      "bottom-only": "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+    },
+    colors: {
+      "green-dark": "#3D6B51",
+      black: "#000000",
+      white: "#ffffff",
+      lime: "#00C154",
+    },
+    backgroundImage: {
+      "footer-gradient": "linear-gradient(to bottom, #3D6B51, #000000)",
+    },
   },
   plugins: [],
 };
