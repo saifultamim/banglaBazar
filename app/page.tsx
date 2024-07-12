@@ -15,7 +15,7 @@ import PotatoWhite from "@/app/assets/products/Potato White.png";
 import Capsicum from "@/app/assets/products/Capsicum.png";
 import GreenChili from "@/app/assets/products/Green Chili.png";
 import LongBegun from "@/app/assets/products/Long Begun.png";
-import ProductCard from "./product/product-card/page";
+import ProductCard from "@/app/products/product-card/page";
 import HomePageBanner from "./components/home/banner";
 
 const popularPicks = [

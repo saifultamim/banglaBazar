@@ -18,7 +18,10 @@ import GreenChili from "@/app/assets/products/Green Chili.png";
 import LongBegun from "@/app/assets/products/Long Begun.png";
 import MuttonPremium from "@/app/assets/products/Mutton Premium.png";
 import RoastChicken from "@/app/assets/products/Roast Chicken.png";
-
+import ProductsPageSidebar from "@/app/products/sidebar/page";
+import Image from "next/image";
+import oil from "@/app/assets/home/oil.png";
+import rice from "@/app/assets/home/rice.png";
 const products = [
   {
     productName: "Beef Bone-In Premium",
@@ -215,16 +218,77 @@ const products = [
 ];
 export default function ProductPage() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-5 mb-10 mx-5">
-      {products.map((product, idx) => (
-        <SingleProductPage
-          key={idx}
-          productName={product.productName}
-          productWeight={product.productWeight}
-          productPrice={product.productPrice}
-          productImg={product.productImg}
-        />
-      ))}
-    </div>
+    <section>
+      <div className="w-full flex justify-around items-center bg-black text-white py-10">
+        <div>
+          <p className="text-[20px] font-[400]">DEAL OF THE DAY</p>
+        </div>
+        <div>
+          <p className="text-[20px] font-[400]">12:12:12 Left</p>
+        </div>
+      </div>
+      <div className="w-[87%] mx-auto">
+        <div className="grid grid-cols-12 gap-10 mb-10">
+          <div className="col-span-2">
+            <ProductsPageSidebar />
+          </div>
+          <div className="col-span-10">
+            <div className="relative">
+              {/* White background above the red content */}
+              <div
+                className="absolute top-[-75px] md:top-[-35px] left-[450px] transform -translate-x-1/2 w-full md:w-[800px] bg-white z-20 py-5 md:py-10 rounded-lg shadow-lg"
+                style={{ boxShadow: "0 6px 6px -1px #A9A9A9" }}
+              >
+                {/* Red background for the content */}
+                <div className="flex flex-col md:flex-row items-center justify-around bg-[#A80000] overflow-hidden ">
+                  <div className="flex items-center bg-red-600 text-white py-2 rounded-lg md:mr-4">
+                    <Image
+                      src={oil.src}
+                      alt="Pusti Soyabin Oil"
+                      className="w-[130px] h-[140px] md:absolute md:left-6"
+                      width={200}
+                      height={200}
+                    />
+                    <div className="ml-2">
+                      <p className="text-[15px] font-[400]">
+                        Pusti Soyabin Oil
+                      </p>
+                      <p className="text-[15px] font-[400]">SL</p>
+                      <p className="text-[15px] font-[700]">900Bdt</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center bg-red-600 text-white p-2 rounded-lg">
+                    <Image
+                      src={rice.src}
+                      alt="Nazirshail Rice"
+                      className="w-[130px] h-[140px] md:absolute md:right-6"
+                      width={200}
+                      height={200}
+                    />
+                    <div className="ml-2">
+                      <p className="text-[15px] font-[400]">Nazirshail Rice</p>
+                      <p className="text-[15px] font-[400]">1KG</p>
+                      <p className="text-[15px] font-[700]">85Bdt</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative">hello</div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-5 mt-36">
+              {products.map((product, idx) => (
+                <SingleProductPage
+                  key={idx}
+                  productName={product.productName}
+                  productWeight={product.productWeight}
+                  productPrice={product.productPrice}
+                  productImg={product.productImg}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
