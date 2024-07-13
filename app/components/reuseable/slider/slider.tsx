@@ -20,7 +20,7 @@ function ReuseableSlider({ children }: any) {
         breakpoint: 1320,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
         },
       },
@@ -28,16 +28,18 @@ function ReuseableSlider({ children }: any) {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToScroll: 1,
+          initialSlide: 1,
+          infinite: true,
         },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToScroll: 1,
+          initialSlide: 1,
+          infinite: true,
         },
       },
       {
@@ -45,6 +47,8 @@ function ReuseableSlider({ children }: any) {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          initialSlide: 1,
+          infinite: true,
         },
       },
     ],
