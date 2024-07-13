@@ -16,6 +16,8 @@ import Capsicum from "@/app/assets/products/Capsicum.png";
 import GreenChili from "@/app/assets/products/Green Chili.png";
 import LongBegun from "@/app/assets/products/Long Begun.png";
 import ProductCard from "@/app/products/product-card/page";
+import MuttonPremium from "@/app/assets/products/Mutton Premium.png";
+import RoastChicken from "@/app/assets/products/Roast Chicken.png";
 import HomePageBanner from "./components/home/banner";
 
 const popularPicks = [
@@ -198,8 +200,36 @@ const freshVegetables = [
   },
 ];
 
-const freshMeat = [];
-
+const freshMeat = [
+  {
+    id: 1,
+    productName: "Beef Bone-In Premium",
+    productWeight: "500gm",
+    productPrice: "394Bdt",
+    productImg: Beef,
+  },
+  {
+    id: 2,
+    productName: "Broiler Chicken w/o Skin",
+    productWeight: "1KG",
+    productPrice: "300Bdt",
+    productImg: BroilerChicken,
+  },
+  {
+    id: 3,
+    productName: "Mutton Premium",
+    productWeight: "500gm",
+    productPrice: "625Bdt",
+    productImg: MuttonPremium,
+  },
+  {
+    id: 4,
+    productName: "Roasted Chicken",
+    productWeight: "250gm",
+    productPrice: "250Bdt",
+    productImg: RoastChicken,
+  },
+];
 export default function Home() {
   return (
     <main>
@@ -213,7 +243,7 @@ export default function Home() {
           </h3>
           <ReuseableSlider>
             {popularPicks.map((product, idx) => (
-              <ProductCard key={product.id} {...product} />
+              <ProductCard key={idx} {...product} />
             ))}
           </ReuseableSlider>
         </div>
@@ -223,7 +253,7 @@ export default function Home() {
           </h3>
           <ReuseableSlider>
             {grocery.map((product, idx) => (
-              <ProductCard key={product.id} {...product} />
+              <ProductCard key={idx} {...product} />
             ))}
           </ReuseableSlider>
         </div>
@@ -233,7 +263,7 @@ export default function Home() {
           </h3>
           <ReuseableSlider>
             {chocolateAndSnacks.map((product, idx) => (
-              <ProductCard key={product.id} {...product} />
+              <ProductCard key={idx} {...product} />
             ))}
           </ReuseableSlider>
         </div>
@@ -243,7 +273,17 @@ export default function Home() {
           </h3>
           <ReuseableSlider>
             {freshVegetables.map((product, idx) => (
-              <ProductCard key={product.id} {...product} />
+              <ProductCard key={idx} {...product} />
+            ))}
+          </ReuseableSlider>
+        </div>
+        <div className="mb-10">
+          <h3 className="text-[20px] font-[800] mb-2 md:ml-2 lg:ml-7 text-[#3D6B51]">
+            FRESH MEAT
+          </h3>
+          <ReuseableSlider>
+            {freshMeat.map((product, idx) => (
+              <ProductCard key={idx} {...product} />
             ))}
           </ReuseableSlider>
         </div>

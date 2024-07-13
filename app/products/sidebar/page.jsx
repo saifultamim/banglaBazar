@@ -3,83 +3,82 @@ import kurkureAds from "../../assets/advertisement/kurkure.png";
 import pamirColaAds from "../../assets/advertisement/pamir-cola.png";
 import shanAds from "../../assets/advertisement/shan.png";
 import Image from "next/image";
+import Link from "next/link";
 export default function ProductsPageSidebar() {
   return (
     <div>
-      <div className="w-full md:w-60 pl-4 py-4 rounded-lg bg-green-dark text-white">
-        {/* <div className="w-full md:w-[190px] pl-4 py-4 rounded-lg bg-green-dark text-white"> */}
-        <h2 className="text-lg font-bold mb-4">Category</h2>
-        <div className="mb-6">
-          <h3 className="text-primary mb-2">Popular Picks</h3>
-          <ul>
-            <li className="mb-2">
-              <a href="#" className="hover:text-primary">
+      <div className="w-full md:w-60 py-10 rounded-bl-lg rounder-br-lg bg-green-dark text-white">
+        <h2 className="text-[20px] font-[500] mb-4 pl-4">Category</h2>
+        <h3 className="text-[14px] font-[500] mb-7 bg-[#00C154] px-3 py-1">
+          Popular Picks
+        </h3>
+        <div className="mb-6 pl-4">
+          <ul className="pl-3">
+            <li className="mb-2 hover:bg-[#00C154] rounded-tl-lg rounded-bl-lg py-1 px-3">
+              <Link href="#" className="text-[11px] font-[700] text-white ">
                 All Items
-              </a>
+              </Link>
             </li>
-            <li className="mb-2">
-              <a href="#" className="hover:text-primary">
+            <li className="mb-2 hover:bg-[#00C154] rounded-tl-lg rounded-bl-lg py-1 px-3">
+              <Link href="#" className="text-[11px] font-[700] text-white ">
                 Fresh Vege
-              </a>
+              </Link>
             </li>
-            <li className="mb-2">
-              <a
-                href="#"
-                className="bg-primary text-primary-foreground p-2 rounded"
-              >
+            <li className="mb-2 hover:bg-[#00C154] rounded-tl-lg rounded-bl-lg py-1 px-3">
+              <Link href="#" className="text-[11px] font-[700] text-white ">
                 Bangladeshi Grocery
-              </a>
+              </Link>
             </li>
-            <li className="mb-2">
-              <a href="#" className="hover:text-primary">
+            <li className="mb-2 hover:bg-[#00C154] rounded-tl-lg rounded-bl-lg py-1 px-3">
+              <Link href="#" className="text-[11px] font-[700] text-white ">
                 Indian Grocery
-              </a>
+              </Link>
             </li>
-            <li className="mb-2">
-              <a href="#" className="hover:text-primary">
+            <li className="mb-2 hover:bg-[#00C154] rounded-tl-lg rounded-bl-lg py-1 px-3">
+              <Link href="#" className="text-[11px] font-[700] text-white ">
                 Pakistani Grocery
-              </a>
+              </Link>
             </li>
-            <li className="mb-2">
-              <a href="#" className="hover:text-primary">
+            <li className="mb-2 hover:bg-[#00C154] rounded-tl-lg rounded-bl-lg py-1 px-3">
+              <Link href="#" className="text-[11px] font-[700] text-white ">
                 Deli Items
-              </a>
+              </Link>
             </li>
-            <li className="mb-2">
-              <a href="#" className="hover:text-primary">
+            <li className="mb-2 hover:bg-[#00C154] rounded-tl-lg rounded-bl-lg py-1 px-3">
+              <Link href="#" className="text-[11px] font-[700] text-white ">
                 Meat Items
-              </a>
+              </Link>
             </li>
-            <li className="mb-2">
-              <a href="#" className="hover:text-primary">
+            <li className="mb-2 hover:bg-[#00C154] rounded-tl-lg rounded-bl-lg py-1 px-3">
+              <Link href="#" className="text-[11px] font-[700] text-white ">
                 Milk and Beverages
-              </a>
+              </Link>
             </li>
-            <li className="mb-2">
-              <a href="#" className="hover:text-primary">
+            <li className="mb-2 hover:bg-[#00C154] rounded-tl-lg rounded-bl-lg py-1 px-3">
+              <Link href="#" className="text-[11px] font-[700] text-white ">
                 Cooking Essentials
-              </a>
+              </Link>
             </li>
-            <li className="mb-2">
-              <a href="#" className="hover:text-primary">
+            <li className="mb-2 hover:bg-[#00C154] rounded-tl-lg rounded-bl-lg py-1 px-3">
+              <Link href="#" className="text-[11px] font-[700] text-white ">
                 Special Offers
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
-        <ul>
+        <ul className="pl-4">
           <li className="mb-2">
-            <a href="#" className="hover:text-primary">
+            <a href="#" className="text-[14px] font-[500] mb-7">
               Grocery
             </a>
           </li>
           <li className="mb-2">
-            <a href="#" className="hover:text-primary">
+            <a href="#" className="text-[14px] font-[500] mb-7">
               Chocolate and Snacks
             </a>
           </li>
           <li className="mb-2">
-            <a href="#" className="hover:text-primary">
+            <a href="#" className="text-[14px] font-[500] mb-7">
               Fresh Meat
             </a>
           </li>

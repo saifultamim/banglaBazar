@@ -17,7 +17,7 @@ export default function ProductCard({
   productImg,
 }: Props) {
   return (
-    <div key={key} className="mb-10">
+    <div className="mb-10" key={key}>
       <div
         className="w-[250px] h-[310px] mx-auto border border-[#BBBBBB] rounded-[20px] p-3"
         style={{ boxShadow: "0 6px 6px -1px #A9A9A9" }}
