@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { HiShoppingCart } from "react-icons/hi2";
-
+import "../style.css";
 type Props = {
   productName: string;
   productWeight: string;
@@ -15,7 +15,7 @@ export default function SingleProductPage({
 }: Props) {
   return (
     <div
-      className="w-[206px] h-[290px] mx-auto border border-[#BBBBBB] rounded-[20px] p-3"
+      className="card-width mx-auto border border-[#BBBBBB] rounded-[20px] p-3"
       style={{ boxShadow: "0 6px 6px -1px #A9A9A9" }}
     >
       <Image src={productImg} width={196} height={196} alt="Product Image" />

@@ -4,10 +4,11 @@ import pamirColaAds from "../../assets/advertisement/pamir-cola.png";
 import shanAds from "../../assets/advertisement/shan.png";
 import Image from "next/image";
 import Link from "next/link";
+import "../style.css";
 export default function ProductsPageSidebar() {
   return (
     <div>
-      <div className="w-full md:w-60 py-10 rounded-bl-lg rounder-br-lg bg-green-dark text-white">
+      <div className="sidebar rounded-bl-lg rounded-br-lg bg-green-dark text-white">
         <h2 className="text-[20px] font-[500] mb-4 pl-4">Category</h2>
         <h3 className="text-[14px] font-[500] mb-7 bg-[#00C154] px-3 py-1">
           Popular Picks
@@ -96,7 +97,7 @@ export default function ProductsPageSidebar() {
           alt="ads"
           width={500}
           height={50}
-          className="w-full h-auto"
+          className="w-full h-auto hidden md:block"
         />
       </div>
       <div className="mt-4">
@@ -105,7 +106,7 @@ export default function ProductsPageSidebar() {
           alt="ads"
           width={350}
           height={50}
-          className="w-full h-auto"
+          className="w-full h-auto hidden md:block"
         />
       </div>
       <div className="mt-4">
@@ -114,7 +115,7 @@ export default function ProductsPageSidebar() {
           alt="ads"
           width={350}
           height={50}
-          className="w-full h-auto"
+          className="w-full h-auto hidden md:block"
         />
       </div>
     </div>

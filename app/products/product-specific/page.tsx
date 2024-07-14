@@ -43,12 +43,20 @@ export default function ProductSpecificPage() {
         </div>
         <div className="flex flex-col md:flex-row">
           <div className="flex-shrink-0">
-            <Image
+            {/* <Image
               src={PureItKit}
               width={738}
               height={738}
               alt="Unilever Pureit Classic Water Purifier"
               className="rounded-lg shadow-md border border-[#AFAFAF]"
+              style={{ boxShadow: "0 6px 6px -1px #A9A9A9" }}
+            /> */}
+            <Image
+              src={PureItKit}
+              width={738}
+              height={738}
+              alt="Unilever Pureit Classic Water Purifier"
+              className="w-full sm:w-3/4 md:w-[300px] md:h-[400px] lg:w-[400px] xl:w-[500px] rounded-lg shadow-md border border-[#AFAFAF]"
               style={{ boxShadow: "0 6px 6px -1px #A9A9A9" }}
             />
           </div>

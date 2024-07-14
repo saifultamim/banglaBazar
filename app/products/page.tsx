@@ -23,7 +23,7 @@ import Image from "next/image";
 import oil from "@/app/assets/home/oil.png";
 import rice from "@/app/assets/home/rice.png";
 import coloAds from "@/app/assets/advertisement/cola.png";
-
+import "./style.css";
 const products = [
   {
     productName: "Beef Bone-In Premium",
@@ -221,7 +221,7 @@ const products = [
 export default function ProductPage() {
   return (
     <section>
-      <div className="w-full flex justify-evenly items-center bg-black text-white py-10">
+      <div className="hidden w-full md:flex justify-evenly items-center bg-black text-white py-10">
         <div>
           <p className="text-[20px] font-[400]">DEAL OF THE DAY</p>
         </div>
@@ -229,25 +229,23 @@ export default function ProductPage() {
           <p className="text-[20px] font-[400]">12:12:12 Left</p>
         </div>
       </div>
-      <div className="w-[87%] mx-auto">
+      <div className="sidebar-width mx-auto">
         <div className="grid grid-cols-12 gap-10 mb-10">
-          <div className="col-span-2">
+          <div className="col-span-12 md:col-span-2">
             <ProductsPageSidebar />
           </div>
-          <div className="col-span-10">
+          <div className="col-span-10 md:col-span-10">
             <div className="relative">
-              {/* White background above the red content */}
               <div
-                className="absolute top-[-75px] md:top-[-35px] left-[450px] transform -translate-x-1/2 w-full md:w-[800px] bg-white z-20 py-5 md:py-10 rounded-lg shadow-lg"
+                className="ads-section bg-white rounded-lg shadow-lg"
                 style={{ boxShadow: "0 6px 6px -1px #A9A9A9" }}
               >
-                {/* Red background for the content */}
-                <div className="flex flex-col md:flex-row items-center justify-around bg-[#A80000] overflow-hidden">
+                <div className="md:flex flex-col md:flex-row items-center justify-around bg-[#A80000] hidden">
                   <div className="flex items-center bg-red-600 text-white py-2 rounded-lg md:mr-4">
                     <Image
                       src={oil.src}
                       alt="Pusti Soyabin Oil"
-                      className="w-[130px] h-[140px] md:absolute md:left-6"
+                      className="oil-img md:absolute md:left-6"
                       width={200}
                       height={200}
                     />
@@ -263,7 +261,7 @@ export default function ProductPage() {
                     <Image
                       src={rice.src}
                       alt="Nazirshail Rice"
-                      className="w-[130px] h-[140px] md:absolute md:right-6"
+                      className="rice-img md:absolute md:right-6"
                       width={200}
                       height={200}
                     />
@@ -276,22 +274,24 @@ export default function ProductPage() {
                 </div>
               </div>
               <div className="relative">
-                <div className="absolute -top-[50px] -right-[50px] w-full md:w-[187px] h-[187px] mt-20 md:mt-0 bg-[#F5F5F5] p-4 rounded-[18px] border border-[#B7B7B7] transform -translate-x-1/2 z-10 flex flex-col justify-center items-center">
+                <div className="cola-div absolute mt-20 md:mt-0 bg-[#F5F5F5] p-4 rounded-[18px] border border-[#B7B7B7] transform -translate-x-1/2 z-10 lg:flex flex-col justify-center items-center hidden">
                   <Image
                     src={coloAds.src}
                     alt="Cola Advertisement"
-                    className="w-[100px] h-[100px] rounded-[18px]"
+                    className="cola-ads rounded-[18px] mx-auto "
                     width={300}
                     height={300}
                   />
-                  <p className="text-[11px] font-[700]">Pamir Cola 200ml</p>
-                  <h4 className="text-[16px] font-[700] text-[#A80000]">
+                  <p className="text-[11px] font-[700] text-center">
+                    Pamir Cola 200ml
+                  </p>
+                  <h4 className="text-[16px] font-[700] text-[#A80000] text-center">
                     5 can @ 1000Bdt
                   </h4>
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-5 mt-44">
+            <div className="card-section gap-5 mx-5 mt-5 md:mt-44">
               {products.map((product, idx) => (
                 <SingleProductPage
                   key={idx}
