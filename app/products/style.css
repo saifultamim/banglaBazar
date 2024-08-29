@@ -1,0 +1,213 @@
+.card-width {
+  width: 206px;
+  height: 290px;
+  margin-bottom: 20px;
+}
+
+.card-section {
+  display: block;
+}
+
+.sidebar-width {
+  width: 100%;
+}
+
+.sidebar {
+  width: auto;
+  padding: 20px 0px;
+}
+
+/* .ads-section,
+.cola-div {
+  display: block;
+} */
+
+.oil-img,
+.rice-img,
+.cola-ads {
+  width: auto;
+  height: auto;
+}
+
+/* Tablet and larger devices */
+@media (min-width: 768px) {
+  .card-width {
+    width: 206px;
+    height: 290px;
+  }
+  .card-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sidebar-width {
+    width: 95%;
+  }
+  .sidebar {
+    width: 150px;
+    padding: 20px 0px;
+  }
+  .ads-section {
+    display: block;
+    position: absolute;
+    width: 500px;
+    top: -30px;
+    left: 50%;
+    padding: 40px 0px;
+    transform: translateX(-50%);
+  }
+  .oil-img {
+    width: 90px;
+    height: 100px;
+    left: -10px;
+  }
+  .rice-img {
+    width: 90px;
+    height: 150px;
+    right: 170px;
+  }
+  .cola-div {
+    width: 187px;
+    height: 187px;
+    top: -43px;
+    right: -50px;
+  }
+  .cola-ads {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Large devices */
+@media (min-width: 1024px) {
+  .card-width {
+    width: 206px;
+    height: 290px;
+  }
+  .card-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sidebar-width {
+    width: 95%;
+  }
+  .sidebar {
+    width: 200px;
+    padding: 20px 0px;
+  }
+  .ads-section {
+    width: 500px;
+    top: -30px;
+    left: 37%;
+    padding: 40px 0px;
+    transform: translateX(-50%);
+  }
+  .oil-img {
+    width: 90px;
+    height: 100px;
+    left: -10px;
+  }
+  .rice-img {
+    width: 90px;
+    height: 150px;
+    right: 170px;
+  }
+  .cola-div {
+    width: 187px;
+    height: 187px;
+    top: -43px;
+    right: -50px;
+  }
+  .cola-ads {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Extra large devices */
+@media (min-width: 1280px) {
+  .card-width {
+    width: 206px;
+    height: 290px;
+  }
+  .card-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sidebar-width {
+    width: 90%;
+  }
+  .sidebar {
+    width: 220px;
+  }
+  .ads-section {
+    width: 580px;
+    top: -30px;
+    left: 37%;
+    padding: 40px 0px;
+    transform: translateX(-50%);
+  }
+  .oil-img {
+    width: 90px;
+    height: 100px;
+    left: 10px;
+  }
+  .rice-img {
+    width: 90px;
+    height: 150px;
+    right: 200px;
+  }
+  .cola-div {
+    width: 220px;
+    height: 200px;
+    top: -43px;
+    right: -50px;
+  }
+  .cola-ads {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* Extra extra large devices */
+@media (min-width: 1460px) {
+  .card-width {
+    width: 206px;
+    height: 290px;
+  }
+  .card-section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .sidebar-width {
+    width: 87%;
+  }
+  .sidebar {
+    width: 250px;
+    padding: 20px 0px;
+  }
+  .ads-section {
+    width: 800px;
+    top: -30px;
+    left: 40%;
+    padding: 40px 0px;
+    transform: translateX(-50%);
+  }
+  .oil-img {
+    width: 130px;
+    height: 140px;
+    left: 30px;
+  }
+  .rice-img {
+    width: 90px;
+    height: 150px;
+    right: 235px;
+  }
+  .cola-div {
+    width: 190px;
+    height: 200px;
+    top: -43px;
+    right: -60px;
+  }
+  .cola-ads {
+    width: 120px;
+    height: 120px;
+  }
+}
