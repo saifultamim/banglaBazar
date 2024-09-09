@@ -1,5 +1,5 @@
 import React from "react";
-import SingleProductPage from "./single-product/page";
+
 import Beef from "@/app/assets/products/Beef Bone-In Premium.png";
 import Himsagar from "@/app/assets/products/Himsagar Mango.png";
 import Nazirshail from "@/app/assets/products/Nazirshail Rice.png";
@@ -24,6 +24,8 @@ import oil from "@/app/assets/home/oil.png";
 import rice from "@/app/assets/home/rice.png";
 import coloAds from "@/app/assets/advertisement/cola.png";
 import "./style.css";
+import SingleProductPage from "./single-product/page";
+
 const products = [
   {
     productName: "Beef Bone-In Premium",

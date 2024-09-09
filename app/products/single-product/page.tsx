@@ -1,18 +1,41 @@
+'use client'
 import Image from "next/image";
 import { HiShoppingCart } from "react-icons/hi2";
 import "../style.css";
+import { useRouter } from 'next/router';
+import { useEffect, useState } from "react";
 type Props = {
-  productName: string;
-  productWeight: string;
+   productName: string;
+   productWeight: string;
   productPrice: string;
   productImg: any;
 };
-export default function SingleProductPage({
-  productName,
-  productWeight,
-  productPrice,
-  productImg,
-}: Props) {
+export default function SingleProductPage({productName,productWeight,productPrice,productImg}:Props) {
+  const [cart, setCart] = useState<any[]>([]);
+  useEffect(() => {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+  }, []);
+  
+const product = {productName,productWeight,productPrice}
+    const addToCart = (product:any) => {
+       // Retrieve the current cart from localStorage
+       window.location.reload()
+       const storedCart = localStorage.getItem('cart');
+       let cartArray = storedCart ? JSON.parse(storedCart) : [];
+   
+       // Add the new product to the cart
+       cartArray.push(product);
+   
+       // Save the updated cart in localStorage
+       localStorage.setItem('cart', JSON.stringify(cartArray));
+   
+       // Update the local state to reflect the changes
+       setCart(cartArray);
+      
+    }
   return (
     <div
       className="card-width mx-auto border border-[#BBBBBB] rounded-[20px] p-3"
@@ -23,10 +46,16 @@ export default function SingleProductPage({
       <p className="text-[15px] font-[400] text-left">{productWeight}</p>
       <div className="flex justify-between items-center ">
         <p className="text-[15px] font-[700] text-left">{productPrice}</p>
-        <div className="flex items-center justify-between bg-green-dark text-white px-2 py-1 rounded-[3px] w-1/2">
+    
+  
+       <div className="flex items-center justify-between bg-green-dark text-white px-2 py-1 rounded-[3px] w-1/2"
+      
+       >
           <HiShoppingCart className="text-xs" />
-          <button className="text-[7px]">Add to cart</button>
+          <button className="text-[7px]" onClick={()=>addToCart(product)}>Add to cart</button>
         </div>
+     
+     
       </div>
     </div>
   );

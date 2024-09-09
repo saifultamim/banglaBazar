@@ -94,7 +94,7 @@
 // }
 
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "@/app/assets/navbar/BB 1.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -102,7 +102,10 @@ import { HiShoppingCart, HiMenu, HiX } from "react-icons/hi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+//const productLength = JSON.parse(localStorage.getItem('cart') || '[]')
 
+//const length = productLength.length
+//console.log('cart ',productLength.length)
   return (
     <main>
       <section className="w-[87%] mx-auto py-3">
@@ -114,6 +117,13 @@ export default function Navbar() {
           </div>
           <div className="hidden md:flex md:col-span-8 justify-end items-center">
             <div className="flex flex-col md:flex-row items-center justify-end">
+           
+              <Link
+                href="../products"
+                className="text-sm text-center border border-black py-1 px-4 rounded-md bg-green-dark text-white"
+              >
+                Products
+              </Link>
               <input
                 type="text"
                 placeholder="Search"
@@ -121,9 +131,10 @@ export default function Navbar() {
                 style={{ boxShadow: "0 6px 6px -1px #A9A9A9" }}
               />
               <Link
-                href="/cart"
+                href="../components/addcart"
                 className="text-sm text-center py-1 px-3 rounded-md bg-[#00C154] text-white mb-3 md:mb-0 md:mr-3"
               >
+                {/* <p className='absolute text-white ml-6 '>{length}</p> */}
                 <HiShoppingCart className="text-2xl" />
               </Link>
               <Link

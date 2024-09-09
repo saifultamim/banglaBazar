@@ -22,6 +22,8 @@ const config: Config = {
       black: "#000000",
       white: "#ffffff",
       lime: "#00C154",
+      slate:"#C0C0C0",
+      red:"#FF0000",
     },
     backgroundImage: {
       "footer-gradient": "linear-gradient(to bottom, #3D6B51, #000000)",
