@@ -22,10 +22,18 @@ export default function SingleProductPage({productName,productWeight,productPric
 const product = {productName,productWeight,productPrice}
     const addToCart = (product:any) => {
        // Retrieve the current cart from localStorage
-       window.location.reload()
+      
        const storedCart = localStorage.getItem('cart');
        let cartArray = storedCart ? JSON.parse(storedCart) : [];
-   
+         console.log('___ ',cartArray)
+        //  cartArray.filter(product=>{
+        //   if(product.productName === productName){
+        //     console.log('matched')
+        //   }
+        //   else {
+        //     console.log()
+        //   }
+        //  })
        // Add the new product to the cart
        cartArray.push(product);
    
@@ -48,11 +56,11 @@ const product = {productName,productWeight,productPrice}
         <p className="text-[15px] font-[700] text-left">{productPrice}</p>
     
   
-       <div className="flex items-center justify-between bg-green-dark text-white px-2 py-1 rounded-[3px] w-1/2"
+       <div className="flex items-center justify-between bg-green-dark text-white px-2 py-1 rounded-[3px] w-2/2 border gap-1 "
       
        >
-          <HiShoppingCart className="text-xs" />
-          <button className="text-[7px]" onClick={()=>addToCart(product)}>Add to cart</button>
+          <HiShoppingCart className="text-xl" />
+          <button className="text-[14px]" onClick={()=>addToCart(product)}>Add to cart</button>
         </div>
      
      

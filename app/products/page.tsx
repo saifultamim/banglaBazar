@@ -222,24 +222,35 @@ const products = [
 ];
 export default function ProductPage() {
   return (
-    <section>
-      <div className="hidden w-full md:flex justify-evenly items-center bg-black text-white py-10">
-        <div>
+    <section className=''>
+
+
+
+{/* //justify-evenly  */}
+      <div className="hidden w-full md:flex justify-evenly   items-center bg-black text-white py-10 
+       
+      ">
+      
+     
+     
+      <div className='lg:-ml-48'>
           <p className="text-[20px] font-[400]">DEAL OF THE DAY</p>
         </div>
-        <div>
-          <p className="text-[20px] font-[400]">12:12:12 Left</p>
+        <div className=''>
+          <p className="text-[20px] font-[400] ">12:12:12 Left</p>
         </div>
-      </div>
-      <div className="sidebar-width mx-auto">
-        <div className="grid grid-cols-12 gap-10 mb-10">
-          <div className="col-span-12 md:col-span-2 w-12/12 ">
+     
+      </div> 
+      {/* <div className="sidebar-width mx-auto border border-green"> */}
+      <div className="sidebar-width   md:flex justify-center md:justify-center">
+        <div className="grid grid-cols-12 gap-10 mb-10 ">
+          <div className="col-span-10 md:col-span-2 w-12/12 ">
             <ProductsPageSidebar  />
           </div>
           <div className="col-span-10 md:col-span-10">
-            <div className="relative">
+            <div className="relative ">
               <div
-                className="ads-section bg-white rounded-lg shadow-lg"
+                className="ads-section bg-white rounded-lg shadow-lg "
                 style={{ boxShadow: "0 6px 6px -1px #A9A9A9" }}
               >
                 <div className="md:flex flex-col md:flex-row items-center justify-around bg-[#A80000] hidden">
@@ -280,7 +291,7 @@ export default function ProductPage() {
                   <Image
                     src={coloAds.src}
                     alt="Cola Advertisement"
-                    className="cola-ads rounded-[18px] mx-auto "
+                    className="cola-ads rounded-[18px] mx-auto  "
                     width={300}
                     height={300}
                   />
@@ -293,7 +304,7 @@ export default function ProductPage() {
                 </div>
               </div>
             </div>
-            <div className="card-section gap-5 mx-5 mt-5 md:mt-44">
+            <div className="card-section md:gap-8  lg:gap-1 mt-5 md:mt-44  grid md:grid-cols-2 md:-ml-12 lg:ml-12 ">
               {products.map((product, idx) => (
                 <SingleProductPage
                   key={idx}

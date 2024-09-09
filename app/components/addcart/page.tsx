@@ -37,19 +37,7 @@ const page =  () => {
       console.log('stored cart',storedCart)
      
       setCartItems(storedCart);
-      const products = storedCart.map((product,idx)=>{
-        console.log('product ',product)
-        matched.filter((mProduct,idx)=>{
-            console.log(' *** ',product.productName,mProduct.prodcutName)
-            if(product.productName == mProduct.prodcutName){
-                console.log('-------*')
-                return
-            }else{
-                console.log('----')
-                setMatched([...matched,product])
-            }
-        })
-      })
+   
    
 
       }, []);

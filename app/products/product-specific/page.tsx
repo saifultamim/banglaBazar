@@ -39,7 +39,7 @@ export default function ProductSpecificPage() {
     <div className="">
       <div className="w-[80%] mx-auto p-4 rounded-lg shadow-md">
         <div className="mb-4 text-sm text-muted-foreground">
-          <p>Product Category: Devices / Water / Unilever / pureit / 1500L</p>
+          <p>Product Category: Devices / Water / Unilever / pureit / <span className='text-green-dark'>1500L</span></p>
         </div>
         <div className="flex flex-col md:flex-row">
           <div className="flex-shrink-0">
@@ -75,8 +75,8 @@ export default function ProductSpecificPage() {
                 <p className="text-[24px] font-[400]">Category: Kitchen Ware</p>
                 <p className="text-[24px] font-[900]">TK 4,749.00</p>
               </div>
-              <div className="flex items-center justify-start bg-[#3D6B51] text-white px-2 py-1 rounded-lg w-full">
-                <HiShoppingCart className="text-lg" />
+              <div className="flex items-center justify-start  bg-[#3D6B51] text-white px-2 py-1 rounded-lg w-full">
+                <HiShoppingCart className="text-lg ml-4" />
                 <button className="text-[16px] font-[400] ml-4">
                   Add to cart
                 </button>

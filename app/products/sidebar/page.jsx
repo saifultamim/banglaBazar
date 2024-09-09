@@ -7,8 +7,8 @@ import Link from "next/link";
 import "../style.css";
 export default function ProductsPageSidebar() {
   return (
-    <div>
-      <div className="sidebar rounded-bl-lg rounded-br-lg bg-green-dark text-white">
+    <div className=''>
+      <div className="sidebar rounded-bl-lg rounded-br-lg bg-green-dark text-white hidden lg:inline-block md:hidden ">
         <h2 className="text-[20px] font-[500] mb-4 pl-4">Category</h2>
         <h3 className="text-[14px] font-[500] mb-7 bg-[#00C154] px-3 py-1">
           Popular Picks
@@ -91,7 +91,7 @@ export default function ProductsPageSidebar() {
         </ul>
       </div>
 
-      <div className="sidebar mt-4">
+      <div className="sidebar mt-4 hidden md:hidden lg:inline-block">
         <Image
           src={kurkureAds.src}
           alt="ads"
@@ -102,24 +102,24 @@ export default function ProductsPageSidebar() {
       </div>
 
 
-      <div className=" sidebar mt-4">
+      <div className=" sidebar mt-4 hidden md:hidden lg:inline-block">
         <Image
           src={pamirColaAds.src}
           alt="ads"
           width={350}
           height={50}
-          className="w-full  h-auto hidden md:block"
+          className="w-full  h-auto hidden md:hidden lg:inline-block"
         />
       </div>
 
 
-      <div className=" sidebar mt-4">
+      <div className=" sidebar mt-4 hidden md:hidden lg:inline-block">
         <Image
           src={shanAds.src}
           alt="ads"
           width={350}
           height={50}
-          className="w-full h-auto hidden md:block"
+          className="w-full h-auto hidden"
         />
       </div>
 

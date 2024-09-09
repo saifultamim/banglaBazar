@@ -242,9 +242,11 @@ export default function Home() {
             POPULAR PICS
           </h3>
           <ReuseableSlider>
-            {popularPicks.map((product, idx) => (
+          
+           {popularPicks.map((product, idx) => (
               <ProductCard key={idx} {...product} />
             ))}
+         
           </ReuseableSlider>
         </div>
         <div className="mb-10">

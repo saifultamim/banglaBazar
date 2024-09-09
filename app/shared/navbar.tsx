@@ -109,20 +109,27 @@ export default function Navbar() {
   return (
     <main>
       <section className="w-[87%] mx-auto py-3">
-        <div className="flex justify-between items-center md:grid md:grid-cols-12 md:gap-4">
-          <div className="flex items-center md:col-span-4 mb-3 md:mb-0">
+        <div className="flex lg:flex justify-between items-center md:grid md:grid-cols-5 md:gap-4  mt-7 ">
+          <div className="flex items-center md:col-span-4 mb-3 md:mb-0 ">
             <Link href="/">
               <Image src={logo.src} alt="logo" width={85} height={85} />
             </Link>
           </div>
-          <div className="hidden md:flex md:col-span-8 justify-end items-center">
+          {/* md:flex */}
+          <div className="hidden md:hidden lg:inline   md:col-span-8 justify-end items-center">
             <div className="flex flex-col md:flex-row items-center justify-end">
            
               <Link
                 href="../products"
-                className="text-sm text-center border border-black py-1 px-4 rounded-md bg-green-dark text-white"
+                className="text-sm text-center border border-black py-1 px-4 rounded-md bg-green-dark text-white "
               >
                 Products
+              </Link>
+              <Link
+                href="../products/product-specific"
+                className="text-sm text-center border border-black py-1 px-4 rounded-md bg-green-dark text-white "
+              >
+               product-specific
               </Link>
               <input
                 type="text"
@@ -152,7 +159,7 @@ export default function Navbar() {
             </div>
           </div>
           {/* Hamburger Menu */}
-          <div className="md:hidden flex items-center">
+          <div className="md:inline-block  lg:hidden flex items-center ">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-black focus:outline-none"
@@ -167,7 +174,7 @@ export default function Navbar() {
         </div>
         {/* Mobile Menu */}
         {isOpen && (
-          <section className="md:hidden w-full flex flex-col items-center py-3 space-y-3">
+          <section className=" w-full flex flex-col items-center py-3 space-y-3">
             <input
               type="text"
               placeholder="Search"
@@ -175,7 +182,19 @@ export default function Navbar() {
               style={{ boxShadow: "0 6px 6px -1px #A9A9A9" }}
             />
             <Link
-              href="/cart"
+                href="../products"
+                className="text-sm text-center border border-black py-1 px-4 rounded-md bg-green-dark text-white "
+              >
+                Products
+              </Link>
+              <Link
+                href="../products/product-specific"
+                className="text-sm text-center border border-black py-1 px-4 rounded-md bg-green-dark text-white "
+              >
+               product-specific
+              </Link>
+            <Link
+               href="../components/addcart"
               className="text-sm text-center py-1 px-3 rounded-md bg-[#00C154] text-white w-full"
             >
               <HiShoppingCart className="text-2xl mx-auto" />

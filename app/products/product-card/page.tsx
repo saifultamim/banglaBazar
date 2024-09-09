@@ -17,9 +17,9 @@ export default function ProductCard({
   productImg,
 }: Props) {
   return (
-    <div className="mb-10" key={key}>
+    <div className="mb-10 " key={key}>
       <div
-        className="w-[250px] h-[310px] mx-auto border border-[#BBBBBB] rounded-[20px] p-3"
+        className="w-[250px] h-[310px] mx-auto border border-[#BBBBBB] rounded-[20px] p-3  "
         style={{ boxShadow: "0 6px 6px -1px #A9A9A9" }}
       >
         <Image src={productImg} width={196} height={196} alt="Product Image" />
@@ -27,9 +27,9 @@ export default function ProductCard({
         <p className="text-[15px] font-[400] text-left">{productWeight}</p>
         <div className="flex justify-between items-center ">
           <p className="text-[15px] font-[700] text-left">{productPrice}</p>
-          <button className="flex items-center justify-between bg-green-dark text-white px-2 py-1 rounded-[3px] w-1/2">
-            <HiShoppingCart className="text-xs" />
-            <p className="text-[7px]">Add to cart</p>
+          <button className="flex items-center justify-between bg-green-dark text-white px-2 py-1 rounded-[3px] w-2/2 gap-1">
+            <HiShoppingCart className="text-xl" />
+            <p className="text-[14px]">Add to cart</p>
           </button>
         </div>
       </div>
