@@ -1,4 +1,6 @@
+'use client'
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { HiShoppingCart } from "react-icons/hi2";
 
 type Props = {
@@ -16,6 +18,33 @@ export default function ProductCard({
   productPrice,
   productImg,
 }: Props) {
+  const [cart, setCart] = useState<any[]>([]);
+  useEffect(() => {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+  }, []);
+  
+  const addToCart = (product:any) => {
+    const produc = product
+    const storedCart = localStorage.getItem('cart');
+    let cartArray = storedCart ? JSON.parse(storedCart) : [];
+    console.log("cartArray ",cartArray,produc)
+  
+    const foundProduct = cartArray.find((product:any) =>
+      product.productName === produc.productName &&
+      product.productWeight === produc.productWeight
+    );
+    
+    console.log(foundProduct);
+    if(!foundProduct){
+      cartArray.push(product);
+      localStorage.setItem('cart', JSON.stringify(cartArray));
+      setCart(cartArray);
+    }
+       
+        }  
   return (
     <div className="mb-10 " key={key}>
       <div
@@ -29,7 +58,7 @@ export default function ProductCard({
           <p className="text-[15px] font-[700] text-left">{productPrice}</p>
           <button className="flex items-center justify-between bg-green-dark text-white px-2 py-1 rounded-[3px] w-2/2 gap-1">
             <HiShoppingCart className="text-xl" />
-            <p className="text-[14px]">Add to cart</p>
+            <p className="text-[14px]" onClick={()=>addToCart({productName,productWeight,productPrice})}>Add to cart</p>
           </button>
         </div>
       </div>

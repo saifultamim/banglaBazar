@@ -102,10 +102,13 @@ import { HiShoppingCart, HiMenu, HiX } from "react-icons/hi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-//const productLength = JSON.parse(localStorage.getItem('cart') || '[]')
+  const [length,setLength]=useState(0)
+useEffect(()=>{
+  const productLength = JSON.parse(localStorage.getItem('cart') || '[]')
+  const length = productLength.length
+ setLength(length)
+},[])
 
-//const length = productLength.length
-//console.log('cart ',productLength.length)
   return (
     <main>
       <section className="w-[87%] mx-auto py-3">
@@ -139,10 +142,11 @@ export default function Navbar() {
               />
               <Link
                 href="../components/addcart"
-                className="text-sm text-center py-1 px-3 rounded-md bg-[#00C154] text-white mb-3 md:mb-0 md:mr-3"
+                className="text-sm text-center py-1 px-4 rounded-md bg-[#00C154] text-white  mb-3 md:mb-0 md:mr-3 flex relative"
               >
                 {/* <p className='absolute text-white ml-6 '>{length}</p> */}
-                <HiShoppingCart className="text-2xl" />
+                <HiShoppingCart className="text-2xl mx-auto" />
+                <p className=' w-1/3 border border-black ml-5  absolute text-black font-bold '>+{length}</p>
               </Link>
               <Link
                 href="/login"
@@ -195,9 +199,10 @@ export default function Navbar() {
               </Link>
             <Link
                href="../components/addcart"
-              className="text-sm text-center py-1 px-3 rounded-md bg-[#00C154] text-white w-full"
+              className="text-sm text-center py-1 px-4 rounded-md bg-[#00C154] text-white w-full flex"
             >
               <HiShoppingCart className="text-2xl mx-auto" />
+              <p className=' w-1/3 ml-5  absolute text-black font-bold '>+{length}</p>
             </Link>
             <Link
               href="/login"

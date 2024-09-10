@@ -18,32 +18,28 @@ export default function SingleProductPage({productName,productWeight,productPric
       setCart(JSON.parse(storedCart));
     }
   }, []);
+
+  const addToCart = (product:any) => {
+    const produc = product
+    const storedCart = localStorage.getItem('cart');
+    let cartArray = storedCart ? JSON.parse(storedCart) : [];
+    console.log("cartArray ",cartArray,produc)
   
-const product = {productName,productWeight,productPrice}
-    const addToCart = (product:any) => {
-       // Retrieve the current cart from localStorage
-      
-       const storedCart = localStorage.getItem('cart');
-       let cartArray = storedCart ? JSON.parse(storedCart) : [];
-         console.log('___ ',cartArray)
-        //  cartArray.filter(product=>{
-        //   if(product.productName === productName){
-        //     console.log('matched')
-        //   }
-        //   else {
-        //     console.log()
-        //   }
-        //  })
-       // Add the new product to the cart
-       cartArray.push(product);
-   
-       // Save the updated cart in localStorage
-       localStorage.setItem('cart', JSON.stringify(cartArray));
-   
-       // Update the local state to reflect the changes
-       setCart(cartArray);
-      
+    const foundProduct = cartArray.find((product:any) =>
+      product.productName === produc.productName &&
+      product.productWeight === produc.productWeight
+    );
+    
+    console.log(foundProduct);
+    if(!foundProduct){
+      cartArray.push(product);
+      localStorage.setItem('cart', JSON.stringify(cartArray));
+      setCart(cartArray);
     }
+       
+        }         
+
+
   return (
     <div
       className="card-width mx-auto border border-[#BBBBBB] rounded-[20px] p-3"
@@ -60,7 +56,7 @@ const product = {productName,productWeight,productPrice}
       
        >
           <HiShoppingCart className="text-xl" />
-          <button className="text-[14px]" onClick={()=>addToCart(product)}>Add to cart</button>
+          <button className="text-[14px]" onClick={()=>addToCart({productName,productWeight,productPrice})}>Add to cart</button>
         </div>
      
      

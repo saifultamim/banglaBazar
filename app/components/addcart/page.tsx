@@ -25,68 +25,175 @@ import rice from "@/app/assets/home/rice.png";
 import coloAds from "@/app/assets/advertisement/cola.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { MdDelete } from "react-icons/md";
 
-
+const images  = {
+  "Beef Bone-In Premium": Beef,
+  "Himsagar Mango": Himsagar,
+  "Nazirshail Rice": Nazirshail,
+  "Pure It Kit": PureIt,
+  "Masur Dal Premium": MasurDal,
+  "Broiler Chicken wo Skin": BroilerChicken,
+  "Chicken Egg": ChickenEgg,
+  "Desi Onion": DesiOnion,
+  "Bombay Sweets Chanachur": BombaySweetsChanachur,
+  "KurKure S&O": KurKure,
+  "Ruchi Jhal Chanachur": RuchiJhalChanachur,
+  "Amul Dark Chocolate": AmulDarkChocolate,
+  "Potato White": PotatoWhite,
+  "Capsicum": Capsicum,
+  "Green Chili": GreenChili,
+  "Long Begun": LongBegun,
+  "Mutton Premium": MuttonPremium,
+  "Roast Chicken": RoastChicken
+};
 
 const page =  () => {
     const [cartItems, setCartItems] = useState<any[]>([]);
-    const [matched,setMatched]= useState<any[]>([]);
+    const [total,setTotal]=useState(0)
      useEffect(() => {
-       
             const storedCart = JSON.parse(localStorage.getItem('cart') || '[]');
-      console.log('stored cart',storedCart)
-     
-      setCartItems(storedCart);
-   
-   
-
+              //===================================================
+              const updatedCart = storedCart.map((item: any) => ({
+                ...item,
+                quantity: item.quantity || 1
+            }));
+            setCartItems( updatedCart);
+              //====================================================
+              //================================================
+           
+              //=============================================
+      //setCartItems(storedCart);
       }, []);
+      useEffect(() => {
+        // Calculate subtotal whenever cartItems change
+        const total = cartItems.reduce((acc, product) => 
+            acc + (product.quantity * parseFloat(product.productPrice.replace('Bdt', ''))), 
+            0
+        );
+        setTotal(total);
+    }, [cartItems]);
 
-//    console.log('stored product ',cartItems)
-//    const increaseQuantity = (index: number) => {
-//     const updatedCart = [...cartItems];
-//     updatedCart[index].quantity += 1;
-//     setCartItems(updatedCart);
-//     localStorage.setItem('cart', JSON.stringify(updatedCart)); // Update localStorage
-//   };
-//    const decreaseQuantity = (index: number) => {
-//     const updatedCart = [...cartItems];
-//     if (updatedCart[index].quantity > 1) {
-//       updatedCart[index].quantity -= 1;
-//       setCartItems(updatedCart);
-//       localStorage.setItem('cart', JSON.stringify(updatedCart)); // Update localStorage
-//     }
-//   };
-  const handleProduct=()=>{
-    console.log('matched product ',matched)
-  }
+const decreaseProduct = (index:number) => {
+//   setCartItems(cartItems.map((product, i) =>
+//     i === index
+//         ? { ...product, quantity: Math.max(product.quantity - 1, 1) } // Ensure quantity doesn't go below 1
+//         : product
+// ));
+const updatedCart = cartItems.map((product, i) =>
+  i === index
+      ? { ...product, quantity: Math.max(product.quantity - 1, 1) }
+      : product
+);
+setCartItems(updatedCart);
+localStorage.setItem('cart', JSON.stringify(updatedCart));
+};
+
+const increaseProduct = (index:number) => {
+//  setCartItems(cartItems.map((product, i) =>
+//     i === index
+//         ? { ...product, quantity: product.quantity + 1 } 
+//         : product
+// ));
+const updatedCart = cartItems.map((product, i) =>
+  i === index
+      ? { ...product, quantity: product.quantity + 1 }
+      : product
+);
+setCartItems(updatedCart);
+localStorage.setItem('cart', JSON.stringify(updatedCart));
+}
+const deleteProduct = (index: number) => {
+  const updatedCart = cartItems.filter((_, i) => i !== index);
+  setCartItems(updatedCart);
+  localStorage.setItem('cart', JSON.stringify(updatedCart));
+};
+
     return (
-        <div className='w-10/12 mx-auto'>
-            <div className='flex  gap-4 justify-around font-bold mb-8'>
-                <p>Product Name</p>
-                <p>Product Weight</p>
-                <p>Product Price</p>
-                <p>remove / add</p>
-                <p>quantity</p>
-                <p>Delete</p>
-            </div>
-            <div >
+      <div className='w-11/12 mx-auto'>
+      {/* Grid layout for headings */}
+      <div className='grid grid-cols-5 lg:grid-cols-7 gap-4 p-2 font-bold text-xs lg:text-base'>
+        {/* Headings for different columns */}
+        <div className='hidden lg:block'>Image</div> {/* Hidden on small screens, shown on large */}
+        <div className=' lg:col-span-2'>Name & Weight</div> {/* Spans 2 columns */}
+        <div className='ml-8 md:ml-16 lg:ml-0'>Price</div>
+        <div className='ml-2 md:ml-14 lg:ml-0'>Quantity</div>
+        <div className='ml-4 md:ml-12 lg:ml-0'>Total</div>
+        <div className='  md:ml-0 lg:ml-0'>Delete</div>
+      </div>
+    
+      <hr className='border-slate mb-4' />
+    
+      {/* Grid layout for cart items */}
       {cartItems.map((product, index) => (
-        <div key={index} className='flex gap-16'>
-          <h3>{product.productName}</h3>
-          <p>{product.productWeight}</p>
-          <p>{product.productPrice}</p>
-          <div>
-            <button>-</button>
-            
-            <button onClick={handleProduct}>product</button>
+        <div key={index} className='grid grid-cols-6  text-[8px] md:text-base lg:text-base lg:grid-cols-7  items-center  rounded-lg bg-slate-100'>
+          {/* Image column, hidden on small and medium screens */}
+          <div className='hidden lg:flex '>
+            <Image 
+              alt='productImage' 
+              src={images[product.productName] || Beef} 
+              width={100} 
+              height={100} 
+              className='p-2 rounded-lg'
+            />
+          </div>
+    
+          {/* Name and Weight */}
+          <div className=' col-span-2 '>
+            <h3>{product.productName}</h3>
+            <p>{product.productWeight}</p>
+          </div>
+    
+          {/* Price */}
+          <div className=''>
+            {product.productPrice}
+          </div>
+    
+          {/* Quantity control */}
+          <div className='flex items-center gap-2'>
+            <button 
+              className="text-sm lg:py-1 px-1 md:px-2 lg:px-4 rounded-md bg-green-dark text-white"
+              onClick={() => decreaseProduct(index)}
+            >
+              -
+            </button>
+            <p>{product.quantity}</p>
+            <button 
+              className="text-sm lg:py-1 px-1 md:px-2 lg:px-4 rounded-md bg-green-dark text-white"
+              onClick={() => increaseProduct(index)}
+            >
+              +
+            </button>
+          </div>
+    
+          {/* Total price */}
+          <div className=''>
+            { (product.quantity * parseFloat(product.productPrice.replace('Bdt', ''))).toFixed(2) } Bdt
+      
+          </div>
+        
+          {/* Delete button */}
+          <div className='text-red'>
+            <button 
+              className='text-red-600 text-base lg:text-2xl' 
+              onClick={() => deleteProduct(index)}
+            >
+              <MdDelete />
+            </button>
           </div>
         </div>
       ))}
+    
+      <hr className='border-slate mb-4' />
+    
+      {/* Subtotal */}
+      <div className='w-11/12 mb-4'>
+        <h2 className='grid justify-end font-bold text-black'>
+          SubTotal: {total.toFixed(2)} Bdt
+        </h2>
+      </div>
     </div>
-         
-           
-        </div>
+    
     );
 };
 
