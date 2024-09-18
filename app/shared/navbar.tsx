@@ -141,7 +141,7 @@ useEffect(()=>{
                 style={{ boxShadow: "0 6px 6px -1px #A9A9A9" }}
               />
               <Link
-                href="../components/addcart"
+                href="../cart"
                 className="text-sm text-center py-1 px-4 rounded-md bg-[#00C154] text-white  mb-3 md:mb-0 md:mr-3 flex relative"
               >
                 {/* <p className='absolute text-white ml-6 '>{length}</p> */}
@@ -198,7 +198,7 @@ useEffect(()=>{
                product-specific
               </Link>
             <Link
-               href="../components/addcart"
+               href="../cart"
               className="text-sm text-center py-1 px-4 rounded-md bg-[#00C154] text-white w-full flex"
             >
               <HiShoppingCart className="text-2xl mx-auto" />

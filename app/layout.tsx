@@ -5,6 +5,7 @@ import "./globals.css";
 import Footer from "./shared/footer";
 import Navbar from "./shared/navbar";
 
+
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default function RootLayout({
       <body className={montserrat.className}>
         {/* <Toaster position="top-right" reverseOrder={false} /> */}
         <Navbar />
-        <div>{children}</div>
+      <div>{children}</div>
         <Footer />
       </body>
     </html>

@@ -1,3 +1,4 @@
+
 import PureItKit from "@/app/assets/products/Pure It Kit.png";
 import Image from "next/image";
 import { HiShoppingCart } from "react-icons/hi2";
@@ -6,6 +7,10 @@ import Himsagar from "@/app/assets/products/Himsagar Mango.png";
 import Nazirshail from "@/app/assets/products/Nazirshail Rice.png";
 import PureIt from "@/app/assets/products/Pure It Kit.png";
 import SingleProductPage from "../single-product/page";
+import Link from "next/link";
+
+import { AiFillHome } from "react-icons/ai";
+
 
 const products = [
   {
@@ -34,23 +39,37 @@ const products = [
   },
 ];
 
+
+
 export default function ProductSpecificPage() {
+  const breadCrumbs = [
+    {
+      name: "Home /",
+  link: "/",
+  icon: <AiFillHome />
+    },
+  
+    {
+      name: "Products /",
+  link: "/products",
+  icon: ""
+    },
+  
+  ]
   return (
     <div className="">
       <div className="w-[80%] mx-auto p-4 rounded-lg shadow-md">
-        <div className="mb-4 text-sm text-muted-foreground">
-          <p>Product Category: Devices / Water / Unilever / pureit / <span className='text-green-dark'>1500L</span></p>
-        </div>
+<div className="mb-4 text-sm text-muted-foreground flex">
+  {breadCrumbs?.map((info, i) => (
+    <Link key={i} href={info?.link} className='flex items-center gap-1'>
+      <p className="text-blue-600 hover:underline">{info?.icon}</p>
+      <p className="text-blue-600 hover:underline">{info?.name}</p>
+    </Link>
+  ))}
+</div>
+
         <div className="flex flex-col md:flex-row">
           <div className="flex-shrink-0">
-            {/* <Image
-              src={PureItKit}
-              width={738}
-              height={738}
-              alt="Unilever Pureit Classic Water Purifier"
-              className="rounded-lg shadow-md border border-[#AFAFAF]"
-              style={{ boxShadow: "0 6px 6px -1px #A9A9A9" }}
-            /> */}
             <Image
               src={PureItKit}
               width={738}

@@ -244,7 +244,7 @@ export default function Home() {
           <ReuseableSlider>
           
            {popularPicks.map((product, idx) => (
-              <ProductCard key={idx} {...product} />
+              <ProductCard key={idx}   {...product} />
             ))}
          
           </ReuseableSlider>
@@ -255,7 +255,7 @@ export default function Home() {
           </h3>
           <ReuseableSlider>
             {grocery.map((product, idx) => (
-              <ProductCard key={idx} {...product} />
+              <ProductCard key={idx}  {...product} />
             ))}
           </ReuseableSlider>
         </div>
@@ -265,7 +265,7 @@ export default function Home() {
           </h3>
           <ReuseableSlider>
             {chocolateAndSnacks.map((product, idx) => (
-              <ProductCard key={idx} {...product} />
+              <ProductCard key={idx}   {...product} />
             ))}
           </ReuseableSlider>
         </div>
@@ -275,7 +275,7 @@ export default function Home() {
           </h3>
           <ReuseableSlider>
             {freshVegetables.map((product, idx) => (
-              <ProductCard key={idx} {...product} />
+              <ProductCard key={idx}  {...product} />
             ))}
           </ReuseableSlider>
         </div>
@@ -285,7 +285,7 @@ export default function Home() {
           </h3>
           <ReuseableSlider>
             {freshMeat.map((product, idx) => (
-              <ProductCard key={idx} {...product} />
+              <ProductCard key={idx}   {...product} />
             ))}
           </ReuseableSlider>
         </div>

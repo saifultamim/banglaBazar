@@ -1,5 +1,5 @@
-import React from "react";
 
+import React from "react";
 import Beef from "@/app/assets/products/Beef Bone-In Premium.png";
 import Himsagar from "@/app/assets/products/Himsagar Mango.png";
 import Nazirshail from "@/app/assets/products/Nazirshail Rice.png";
@@ -25,6 +25,7 @@ import rice from "@/app/assets/home/rice.png";
 import coloAds from "@/app/assets/advertisement/cola.png";
 import "./style.css";
 import SingleProductPage from "./single-product/page";
+import { useRouter } from "next/navigation";
 
 const products = [
   {
@@ -221,6 +222,7 @@ const products = [
   },
 ];
 export default function ProductPage() {
+
   return (
     <section className=''>
 

@@ -1,5 +1,6 @@
 'use client'
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HiShoppingCart } from "react-icons/hi2";
 
@@ -62,6 +63,10 @@ export default function ProductCard({
           </button>
         </div>
       </div>
+      <Link 
+     href='/products/product-specific'
+       className="flex items-center justify-between bg-green-dark text-white px-2  rounded-[3px]  border "
+      >Details</Link>
     </div>
   );
 }
